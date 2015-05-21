@@ -11,6 +11,7 @@ def get_zlib_data(data):
         return data[found.start():len(data)]
 
 def get_ole_from_mhtml(filepath):
+    ole = ""
     fh = file(filepath,"rb")
     fdata = fh.read()
     fh.close()
@@ -31,3 +32,4 @@ if __name__ == '__main__':
         fh = file(sys.argv[1]+".ole","wb")
         fh.write(olestream)
         fh.close()
+        print "Success! OLE file extracted to " + sys.argv[1]+ ".ole"
